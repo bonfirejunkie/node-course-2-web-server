@@ -45,8 +45,8 @@ app.get('/', (req, res) =>{
         pageTitle: 'Home Page',
         welcomeMessage: 'Welcome to the homepage!',
         currentYear: new Date().getFullYear()
-    })
-})
+    });
+});
 
  //Route
  app.get('/about', (req, res) =>{
@@ -56,6 +56,12 @@ app.get('/', (req, res) =>{
      }); 
  });
 
+ app.get('/projects', (req, res) =>{
+     res.render('projects.hbs', {
+         pageTitle: 'Projects Page',
+         currentYear: new Date().getFullYear()
+     });
+ };
 
 app.get('/bad', (req, res) =>{
     res.send({
